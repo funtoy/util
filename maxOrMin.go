@@ -1,4 +1,4 @@
-package utils
+package util
 
 func MaxInt64(i ...int64) int64 {
 	var x int64

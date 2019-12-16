@@ -1,4 +1,4 @@
-package utils
+package util
 
 func IF(assert bool, a, b interface{}) interface{} {
 	if assert {

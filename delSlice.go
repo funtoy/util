@@ -1,4 +1,4 @@
-package utils
+package util
 
 // DelSliceInt DelSliceInt
 func DelSliceInt(list []int, i int) []int {

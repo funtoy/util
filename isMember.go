@@ -1,4 +1,4 @@
-package utils
+package util
 
 func IsMemberInt(element int, list []int) bool {
 	for _, v := range list {

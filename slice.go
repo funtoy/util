@@ -1,4 +1,4 @@
-package utils
+package util
 
 func ReversePokers(l [][]int32) {
 	for i := 0; i < int(len(l)/2); i++ {

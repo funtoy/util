@@ -1,4 +1,4 @@
-package utils
+package util
 
 func GetPoker() []int32 {
 	return []int32{
