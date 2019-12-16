@@ -1,4 +1,4 @@
-module util
+module github.com/funtoy/util
 
 go 1.13
 
