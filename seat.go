@@ -21,7 +21,7 @@ func (s Seat) Clean() {
 func (s Seat) Find(key string) (position int32, ok bool) {
 	for index, val := range s {
 		if key == val {
-			position = int32(index)
+			position = int32(index+1)
 			ok = true
 			return
 		}
@@ -29,7 +29,7 @@ func (s Seat) Find(key string) (position int32, ok bool) {
 	for index, val := range s {
 		if val == "" {
 			s[index] = key
-			position = int32(index)
+			position = int32(index+1)
 			ok = true
 			return
 		}
@@ -48,11 +48,11 @@ func (s Seat) Leave(key string) (hasSeat bool) {
 }
 
 func (s Seat) WhoIs(pos int32) (key string, ok bool) {
-	if s.Len()-1 < pos {
+	if s.Len() < pos {
 		return
 	}
 	for index, val := range s {
-		if pos == int32(index) {
+		if pos == int32(index+1) {
 			key = val
 			ok = true
 			return
@@ -64,7 +64,7 @@ func (s Seat) WhoIs(pos int32) (key string, ok bool) {
 func (s Seat) WhereIs(key string) (pos int32, ok bool) {
 	for index, val := range s {
 		if val == key {
-			pos = int32(index)
+			pos = int32(index+1)
 			ok = true
 			return
 		}

@@ -11,14 +11,14 @@ func TestNewSeat(t *testing.T) {
 	if !ok {
 		t.Fail()
 	}
-	if pos != 0 {
+	if pos != 1 {
 		t.Fail()
 	}
 	pos, ok = seat.Find("Tom")
 	if !ok {
 		t.Fail()
 	}
-	if pos != 1 {
+	if pos != 2 {
 		t.Fail()
 	}
 
@@ -31,12 +31,12 @@ func TestNewSeat(t *testing.T) {
 	if !ok {
 		t.Fail()
 	}
-	if pos != 1 {
+	if pos != 2 {
 		t.Fail()
 	}
 	fmt.Println(seat)
 
-	key, ok := seat.WhoIs(1)
+	key, ok := seat.WhoIs(2)
 	if !ok {
 		t.Fail()
 	}
@@ -47,10 +47,10 @@ func TestNewSeat(t *testing.T) {
 	if !ok {
 		t.Fail()
 	}
-	if pos != 0 {
+	if pos != 1 {
 		t.Fail()
 	}
-	_, ok = seat.WhoIs(2)
+	_, ok = seat.WhoIs(3)
 	if ok {
 		t.Fail()
 	}
