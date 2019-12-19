@@ -37,13 +37,14 @@ func (s Seat) Find(key string) (position int32, ok bool) {
 	return
 }
 
-func (s Seat) Leave(key string) {
+func (s Seat) Leave(key string) (hasSeat bool) {
 	for index, val := range s {
 		if val == key {
 			s[index] = ""
-			return
+			return true
 		}
 	}
+	return false
 }
 
 func (s Seat) WhoIs(pos int32) (key string, ok bool) {
