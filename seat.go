@@ -4,7 +4,7 @@ package util
 
 type Seat []string
 
-func NewSeat(v int) Seat {
+func NewSeat(v int32) Seat {
 	return make(Seat, v)
 }
 
