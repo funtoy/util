@@ -11,7 +11,7 @@ import (
 var DefaultIdPool = NewRoomIdPool()
 
 type roomIdPool struct {
-	sync.Mutex
+	mu     sync.Mutex
 	ids    map[string]bool
 	random *rand.Rand
 }
@@ -24,8 +24,8 @@ func NewRoomIdPool() *roomIdPool {
 }
 
 func (i *roomIdPool) New() string {
-	i.Lock()
-	defer i.Unlock()
+	i.mu.Lock()
+	defer i.mu.Unlock()
 
 	for n := 0; n < 5; n++ {
 		id := i.createId()
@@ -48,8 +48,8 @@ func (i *roomIdPool) createId() string {
 }
 
 func (i *roomIdPool) Release(id string) {
-	i.Lock()
-	defer i.Unlock()
+	i.mu.Lock()
+	defer i.mu.Unlock()
 
 	delete(i.ids, id)
 }
