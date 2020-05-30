@@ -9,7 +9,13 @@ func NewSeat(v int32) Seat {
 }
 
 func (s Seat) Len() int32 {
-	return int32(len(s))
+	var result int32
+	for _, v := range s {
+		if v != "" {
+			result++
+		}
+	}
+	return result
 }
 
 func (s Seat) Clean() {

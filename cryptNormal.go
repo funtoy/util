@@ -47,7 +47,7 @@ func Base64StrDecode(in string) ([]byte, error) {
 	return base64.StdEncoding.DecodeString(in)
 }
 
-func Base64UrlSaveEncode(in string) string {
+func Base64UrlSafeEncode(in string) string {
 	in = base64.StdEncoding.EncodeToString([]byte(in))
 	in = strings.Split(in, "=")[0]
 	in = strings.Replace(in, "+", "-", -1)
@@ -55,7 +55,7 @@ func Base64UrlSaveEncode(in string) string {
 	return in
 }
 
-func Base64UrlSaveDecode(in string) ([]byte, error) {
+func Base64UrlSafeDecode(in string) ([]byte, error) {
 	s := in
 	s = strings.Replace(s, "-", "+", -1)
 	s = strings.Replace(s, "_", "/", -1)

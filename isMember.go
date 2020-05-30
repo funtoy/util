@@ -35,3 +35,12 @@ func IsMemberFloat64(element float64, list []float64) bool {
 	}
 	return false
 }
+
+func IsMemberStr(element string, list []string) bool {
+	for _, v := range list {
+		if v == element {
+			return true
+		}
+	}
+	return false
+}
